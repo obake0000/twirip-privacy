@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー - Twitter AI Bulk Reply</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
+    max-width: 760px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.8;
+    color: #1f2937;
+    background: #f9fafb;
+  }
+  h1 { font-size: 26px; border-bottom: 2px solid #1d9bf0; padding-bottom: 10px; }
+  h2 { font-size: 18px; margin-top: 32px; color: #1d9bf0; }
+  p, li { font-size: 14px; }
+  ul { padding-left: 24px; }
+  .meta { color: #6b7280; font-size: 12px; margin-bottom: 24px; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid #d1d5db; padding: 8px 12px; text-align: left; }
+  th { background: #f3f4f6; }
+  .box { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px; margin-top: 24px; }
+  code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>プライバシーポリシー</h1>
+<p class="meta">最終更新日: 2026年5月8日<br>拡張機能名: Twitter AI Bulk Reply</p>
+
+<div class="box">
+<p>本拡張機能（以下「本拡張機能」）は、ユーザーのプライバシーを最大限尊重します。本ポリシーは、本拡張機能が取り扱うデータの種類、利用目的、保存場所について説明します。</p>
+</div>
+
+<h2>1. 収集するデータ</h2>
+<p>本拡張機能は、以下のデータをユーザーのブラウザのローカルストレージにのみ保存します。<strong>外部サーバーや開発者への送信は一切行いません。</strong></p>
+
+<table>
+  <thead><tr><th>データ</th><th>用途</th><th>保存場所</th></tr></thead>
+  <tbody>
+    <tr><td>Claude APIキー</td><td>AIリプライ生成のためのAPI呼び出し</td><td><code>chrome.storage.sync</code></td></tr>
+    <tr><td>シークレットコード</td><td>本拡張機能の利用認証</td><td><code>chrome.storage.local</code></td></tr>
+    <tr><td>カスタムプロンプト</td><td>ユーザーが設定したプロンプトの保存</td><td><code>chrome.storage.sync</code></td></tr>
+    <tr><td>投稿履歴</td><td>重複投稿の防止（30日間）</td><td><code>chrome.storage.local</code></td></tr>
+    <tr><td>取得したツイート</td><td>UI表示・処理用の一時データ</td><td><code>chrome.storage.local</code></td></tr>
+    <tr><td>広告除外キーワード</td><td>広告ツイートの自動除外</td><td><code>chrome.storage.local</code></td></tr>
+    <tr><td>検索キーワード</td><td>ユーザーが保存したキーワード</td><td><code>chrome.storage.local</code></td></tr>
+  </tbody>
+</table>
+
+<h2>2. 第三者への送信</h2>
+<p>本拡張機能は、ユーザーが取得したツイート内容を以下の用途でのみ第三者APIへ送信します。</p>
+<ul>
+  <li><strong>Anthropic（Claude API）</strong>: ユーザーが「リプライ生成」ボタンを押した時のみ、ツイート本文をリプライ生成のためにAnthropic社のAPIへ送信します。送信先のプライバシーポリシーは <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">https://www.anthropic.com/privacy</a> を参照してください。</li>
+  <li><strong>X（旧Twitter）</strong>: 本拡張機能は X.com / twitter.com 上で動作し、当該サイトの公開ツイートを取得・リプライ投稿のためにDOM操作を行います。</li>
+</ul>
+<p>上記以外への送信は一切行いません。開発者や第三者がユーザーデータを収集・閲覧することはありません。</p>
+
+<h2>3. データの取り扱いに関する宣言</h2>
+<ul>
+  <li>本拡張機能は、ユーザーの個人を特定する情報（氏名、住所、電話番号等）を一切収集しません。</li>
+  <li>収集したデータの販売・第三者提供は一切行いません。</li>
+  <li>広告・トラッキング・分析目的のデータ収集は行いません。</li>
+  <li>すべてのユーザーデータは、ユーザー自身のブラウザ内にのみ保存されます。</li>
+</ul>
+
+<h2>4. データの削除</h2>
+<p>ユーザーは以下の方法でいつでもデータを削除できます。</p>
+<ul>
+  <li>拡張機能の設定画面から「履歴をクリア」ボタンで履歴データを削除</li>
+  <li>Chromeの拡張機能管理画面から本拡張機能をアンインストールすると、すべてのローカルデータが削除されます</li>
+</ul>
+
+<h2>5. 権限の利用目的</h2>
+<table>
+  <thead><tr><th>権限</th><th>利用目的</th></tr></thead>
+  <tbody>
+    <tr><td><code>storage</code></td><td>APIキー・設定・履歴のローカル保存</td></tr>
+    <tr><td><code>activeTab</code></td><td>X.com / twitter.com の現在開いているタブの操作</td></tr>
+    <tr><td>host_permission: <code>x.com</code> / <code>twitter.com</code></td><td>ツイートの取得とリプライ投稿</td></tr>
+    <tr><td>host_permission: <code>api.anthropic.com</code></td><td>Claude APIへのリプライ生成リクエスト送信</td></tr>
+  </tbody>
+</table>
+
+<h2>6. ポリシーの変更</h2>
+<p>本ポリシーは予告なく変更される場合があります。重要な変更がある場合は、本拡張機能のアップデート時に通知します。</p>
+
+<h2>7. お問い合わせ</h2>
+<p>本ポリシーや本拡張機能に関するお問い合わせは、Chrome Web Storeのサポートタブよりご連絡ください。</p>
+
+<p style="margin-top:48px; text-align:center; color:#9ca3af; font-size:12px;">© 2026 Twitter AI Bulk Reply</p>
+
+</body>
+</html>
